@@ -27,7 +27,7 @@ const Navbar = () => {
         href={link.href}
         className={`${
           isMobile ? "block" : "inline-block"
-        } text-white hover:text-purple-500 transition-colors duration-300 font-medium ${
+        } text-white hover:text-_purple-500 transition-colors duration-300 font-medium ${
           isMobile ? "px-4 py-2" : "px-4"
         }`}
         onClick={() => isMobile && setIsClick(false)}
@@ -37,7 +37,7 @@ const Navbar = () => {
     ));
 
   return (
-    <nav className="bg-transparent shadow-lg border-b border-gray-600">
+    <nav className="bg- fixed top-0 left-0 w-full z-50 shadow-lg border-b border-gray-600 backdrop-blur-lg bg-opacity-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -53,7 +53,7 @@ const Navbar = () => {
               {/* Register Now Button */}
               <Link
                 href="/register"
-                className="bg-purple-500 text-white px-4 py-1 rounded-2xl hover:bg-purple-600 transition-colors duration-300 font-semibold"
+                className="bg-_purple-500 text-white px-4 py-1 rounded-2xl hover:bg-_purple-600 transition-colors duration-300 font-semibold"
               >
                 Register Now
               </Link>
@@ -63,7 +63,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               aria-label={isClick ? "Close menu" : "Open menu"}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-_purple-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-_purple-500"
               onClick={toggleNavbar}
             >
               {isClick ? (
