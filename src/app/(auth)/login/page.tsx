@@ -1,17 +1,12 @@
 import React from "react";
 
-const RegistrationPage = () => {
+const LoginPage = () => {
   return (
     <div className="relative flex items-center justify-center bg-gradient-bg min-h-screen">
       <div className="backdrop-blur-md bg-gray-400 bg-opacity-5 rounded-xl shadow-lg p-8 max-w-md w-full text-center">
-        <h1 className="text-3xl font-bold text-white mb-6">Register</h1>
+        <h1 className="text-3xl font-bold text-white mb-6">Login</h1>
         {/* {error && <p style={{ color: "red" }}>Error: {error}</p>} */}
         <form className="space-y-4">
-          <input
-            type="text"
-            placeholder="Full Name"
-            className="w-full px-4 py-2 text-sm text-gray-300 bg-transparent border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-_purple-400"
-          />
           <input
             type="email"
             placeholder="Email Address"
@@ -26,13 +21,13 @@ const RegistrationPage = () => {
             type="submit"
             className="w-full px-4 py-2 bg-_purple-600 text-white rounded-md hover:bg-_purple-500 focus:outline-none focus:ring-4 focus:ring-_purple-400"
           >
-            Register
+            Login
           </button>
         </form>
         <p className="mt-4 text-sm text-gray-400">
-          Already have an account?{" "}
-          <a href="/login" className="text-_purple-400 hover:underline">
-            Login
+          Don&apos;t have an account?{" "}
+          <a href="/register" className="text-_purple-400 hover:underline">
+            Register
           </a>
         </p>
       </div>
@@ -40,4 +35,4 @@ const RegistrationPage = () => {
   );
 };
 
-export default RegistrationPage;
+export default LoginPage;
