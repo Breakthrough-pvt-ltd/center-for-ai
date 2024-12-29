@@ -1,9 +1,11 @@
 "use client";
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isClick, setIsClick] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = useMemo(
     () => [
@@ -21,20 +23,27 @@ const Navbar = () => {
   };
 
   const renderLinks = (isMobile: boolean) =>
-    navLinks.map((link) => (
-      <Link
-        key={link.href}
-        href={link.href}
-        className={`${
-          isMobile ? "block" : "inline-block"
-        } text-white hover:text-_purple-500 transition-colors duration-300 font-medium ${
-          isMobile ? "px-4 py-2" : "px-4"
-        }`}
-        onClick={() => isMobile && setIsClick(false)}
-      >
-        {link.label}
-      </Link>
-    ));
+    navLinks.map((link) => {
+      const isActive = pathname === link.href; // Check if the link is active
+      return (
+        <Link
+          key={link.href}
+          href={link.href}
+          className={`${
+            isMobile ? "block" : "inline-block"
+          } text-white hover:text-_purple-500 transition-colors duration-300 font-medium ${
+            isMobile ? "px-4 py-2" : "px-4 py-5"
+          } ${
+            isActive && !isMobile
+              ? "bg-_purple-500 rounded-b-2xl h-12 hover:text-white transform -translate-y-2"
+              : ""
+          }`} // Add active class here
+          onClick={() => isMobile && setIsClick(false)}
+        >
+          {link.label}
+        </Link>
+      );
+    });
 
   return (
     <nav className="bg- fixed top-0 left-0 w-full z-50 shadow-lg border-b border-gray-600 backdrop-blur-lg bg-opacity-50">
