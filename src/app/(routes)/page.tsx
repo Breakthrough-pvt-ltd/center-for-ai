@@ -1,9 +1,9 @@
-import AboutSection from "@/components/AboutSection";
-import AchievementsSection from "@/components/AchievementsSection";
-import ContactSection from "@/components/ContactSection";
-import HeroSection from "@/components/HeroSection";
-import QuickLinkSection from "@/components/QuickLinkSection";
-import WhatWeOfferSection from "@/components/WhatWeOfferSection";
+import AboutSection from "@/components/home/AboutSection";
+import AchievementsSection from "@/components/home/AchievementsSection";
+import ContactSection from "@/components/home/ContactSection";
+import HeroSection from "@/components/home/HeroSection";
+import QuickLinkSection from "@/components/home/QuickLinkSection";
+import WhatWeOfferSection from "@/components/home/WhatWeOfferSection";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { PiMapPinLineLight } from "react-icons/pi";
