@@ -24,7 +24,7 @@ export default {
           400: "#B186C8", // Slightly lighter than 500
           500: "#9E6FB1", // Base color
           600: "#8B619E", // Slightly darker than 500
-          700: "#794E8A", // More pronounced dark shade
+          700: "#2D0B30", // More pronounced dark shade
           800: "#663A76", // Darker shade
           900: "#280A2C", // Deepest shade
         },
