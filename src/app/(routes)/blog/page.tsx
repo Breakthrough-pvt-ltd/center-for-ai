@@ -22,12 +22,14 @@ async function fetchNews() {
     const contentType = response.headers.get("content-type");
     if (contentType && contentType.includes("application/json")) {
       const data = await response.json();
-      return data;
+      return data; // Ensure you're returning the articles array
     } else {
       throw new Error("Invalid JSON response");
     }
-  } catch (error) {
-    console.error("Failed to fetch news:", error.message);
+  } catch (err) {
+    if (err instanceof Error) {
+      console.error("Failed to fetch news:", err.message);
+    }
     return []; // Return an empty array as a fallback
   }
 }
@@ -43,7 +45,11 @@ export default function Blog() {
         const initialNews = await fetchNews();
         setNews(initialNews);
       } catch (err) {
-        setError((err as Error).message);
+        if (err instanceof Error) {
+          setError(err.message); // Access 'message' safely
+        } else {
+          setError(String(err)); // Fallback for unknown error types
+        }
       } finally {
         setLoading(false);
       }
@@ -98,7 +104,7 @@ export default function Blog() {
         <div className="flex flex-wrap justify-center gap-8 mt-5 px-4 pb-8">
           {loading ? (
             // Skeleton Loader
-            Array.from({ length: 6 }).map((_, index) => (
+            Array.from({ length: 8 }).map((_, index) => (
               <div
                 key={index}
                 className="max-w-sm w-full bg-_purple-700 p-6 rounded-lg shadow-lg animate-pulse"
@@ -117,15 +123,18 @@ export default function Blog() {
                 key={index}
                 className="max-w-sm w-full bg-_purple-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                {article.urlToImage && (
+                {article.urlToImage ? (
+                  // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={article.urlToImage}
-                    alt={article.title}
+                    alt={article.title || "Article Image"}
                     className="w-full h-48 object-cover rounded-md mb-4"
                   />
+                ) : (
+                  <div className="w-full h-48 bg-gray-400 rounded-md mb-4"></div> // Placeholder
                 )}
                 <h2 className="text-2xl font-semibold text-white mb-4">
-                  {article.title}
+                  {article.title || "Untitled Article"}
                 </h2>
                 <p className="text-gray-500 mb-4">
                   {article.description || "No description available."}
