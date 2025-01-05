@@ -13,11 +13,17 @@ export default {
         "gradient-bg":
           "linear-gradient(339deg,rgba(0, 0, 0, 0) 11.27%,rgba(171, 44, 169, 0.2) 82.75% ),radial-gradient(41.38% 20.56% at 92.19% 62.7%, #280e3b 0%, #000 57%)",
         "card-gradient-bg":
-          "linear-gradient(0,rgba(41, 10, 45, 1) 100%,rgba(0, 0, 0, 1) 100% )",
+          "linear-gradient(0deg,rgba(41, 10, 45, 1) 100%,rgba(0, 0, 0, 1) 100% )",
+        "card-gradient-bg-sub":
+          "linear-gradient(90deg, #200B2F 0%, #AB2CA9 100%)",
         "text-gradient":
           "linear-gradient(93deg, rgba(255, 255, 255, 0.82) 5.48%, rgba(59, 20, 87, 0.82) 97.88%)",
         "text-gradient-sub":
           "linear-gradient(90deg, rgba(200, 153, 219, 0.69) 0.48%, rgba(69, 46, 100, 0.71) 100%)",
+        "text-gradient-register":
+          "linear-gradient(90deg, rgba(181, 83, 221, 1) 0.48%, rgba(255, 255, 255, 0.75) 35%)",
+        "text-gradient-register-sub":
+          "linear-gradient(270deg, rgba(181, 83, 221, 1) 0.48%, rgba(255, 255, 255, 0.75) 35%)",
       },
       colors: {
         _purple: {
