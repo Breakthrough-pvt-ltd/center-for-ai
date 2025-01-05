@@ -13,34 +13,40 @@ export default function Events() {
         title: "AI & Human Augmentation Expo",
         image: "/event_1.png",
         button: "More Info",
+        url: "https://www.example.com/Evemt1",
       },
       {
         title: "Product Launch and Demo Event",
         image: "/event_2.png",
         button: "Book Now",
+        url: "https://www.example.com/Evemt2",
       },
       {
         title: "Blockchain & Fintech",
         image: "/event_4.png",
         button: "Click Here",
         date: "02 JAN 2024",
+        url: "https://www.example.com/Evemt4",
       },
       {
         title: "Product Launch and Demo Event",
         image: "/event_3.png",
         button: "Book Now",
+        url: "https://www.example.com/Evemt3",
       },
       {
         title: "Blockchain & Fintech",
         image: "/event_4.png",
         button: "Click Here",
         date: "02 JAN 2024",
+        url: "https://www.example.com/Evemt4",
       },
       {
         title: "Blockchain & Fintech",
         image: "/event_1.png",
         button: "Click Here",
         date: "02 JAN 2024",
+        url: "https://www.example.com/Evemt1",
       },
     ],
     []
@@ -75,13 +81,13 @@ export default function Events() {
     <div className="relative bg-gradient-bg min-h-screen">
       {/* Title Section */}
       <div className="flex items-center justify-start px-8 pt-36 pl-36">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight bg-clip-text text-transparent bg-text-gradient-sub max-w-lg">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight bg-clip-text text-transparent bg-text-gradient-sub max-w-lg pb-4">
           | Events
         </h1>
       </div>
 
       {/* Events Grid */}
-      <div className="flex flex-wrap justify-center gap-10 mt-10 px-8">
+      <div className="flex flex-wrap justify-center gap-10 mt-10 px-8 pb-8">
         {events.map((event, index) => {
           const size = imageSizes[index];
           return (
@@ -102,13 +108,14 @@ export default function Events() {
 
                 {/* Event Details */}
                 <div className="absolute bottom-4 left-4 text-white z-10">
-                  <h2 className="text-xl font-bold mb-2">{event.title}</h2>
                   {event.date && (
                     <p className="text-sm font-medium">{event.date}</p>
                   )}
-                  <button className="mt-2 px-4 py-2 bg-black bg-opacity-80 rounded-md hover:bg-opacity-100">
-                    {event.button}
-                  </button>
+                  <a href={event.url} target="_blank">
+                    <button className="mt-2 px-4 py-2 bg-black bg-opacity-80 rounded-md hover:bg-opacity-100">
+                      {event.button}
+                    </button>
+                  </a>
                 </div>
               </div>
             )
