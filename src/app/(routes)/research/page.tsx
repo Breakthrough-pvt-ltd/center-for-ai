@@ -1,5 +1,16 @@
 import React from "react";
-import { PiFaders } from "react-icons/pi";
+import type { Metadata } from "next";
+import Image from "next/image";
+
+{
+  /* Metadata for SEO */
+}
+export const metadata: Metadata = {
+  title: "Research Hub - Innovative Research and Solutions",
+  description:
+    "Discover groundbreaking research in technology, AI, sustainability, and quantum computing. Stay updated with the latest trends and advancements.",
+  keywords: "Research, Technology, AI, Sustainability, Quantum Computing",
+};
 
 export default function Research() {
   // Sample research data
@@ -40,30 +51,31 @@ export default function Research() {
       publishedSite: "https://www.example.com/research5",
     },
   ];
+
   return (
     <>
       <div className="relative bg-gradient-bg min-h-screen">
         {/* Title Section */}
         <div className="flex items-center justify-start px-8 pt-36 pl-36">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight bg-clip-text text-transparent bg-text-gradient-sub max-w-lg">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight bg-clip-text text-transparent bg-text-gradient-sub max-w-lg pb-4">
             | Research Hub
           </h1>
         </div>
 
         {/* Filter Section */}
-        <div className="flex justify-end gap-2 px-8 mt-8 text-white items-center">
+        <div className="flex justify-end gap-2 px-24 mt-8 text-white items-center">
           <label htmlFor="filter" className="text-lg">
             Filter
           </label>
-          <PiFaders />
+          <Image src="/filter.svg" alt="Filter Icon" width={28} height={28} />
         </div>
 
         {/* Research Cards */}
-        <div className="flex flex-wrap justify-center gap-8 mt-5 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-5 px-24 pb-16">
           {researchData.map((research, index) => (
             <div
               key={index}
-              className="max-w-sm w-full bg-gradient-to-t from-black to-_purple-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="col-span-1 md:col-span-2 bg-_purple-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <h2 className="text-2xl font-semibold text-white mb-4">
                 {research.title}
